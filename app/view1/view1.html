@@ -1,0 +1,21 @@
+<h3>Search</h3>
+
+<form>
+	<label>
+		<input type="radio" ng-model="choice" value="r">
+		Search for Representatives
+	</label>
+	<br>
+	<label>
+		<input type="radio" ng-model="choice" value="s">
+		Search for Senators
+	</label>
+</form>
+
+<br><br>
+<select ng-model="state_select" ng-options="state as state.name for state in state_options track by state.id"></select>
+<br><br>
+<br>
+search for {{choice}}
+<br>
+state is {{state_select}}
