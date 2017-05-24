@@ -2,20 +2,17 @@
 
 <form>
 	<label>
-		<input type="radio" ng-model="choice" value="r">
+		<input type="radio" ng-model="choice" value="representatives">
 		Search for Representatives
 	</label>
 	<br>
 	<label>
-		<input type="radio" ng-model="choice" value="s">
+		<input type="radio" ng-model="choice" value="senators">
 		Search for Senators
 	</label>
+	<br>
+	<select ng-model="state_select" ng-options="state as state.name for state in state_options track by state.id"></select>
+	<br><br><br>
+	<button ng-disabled="!(choice && (choice == 'representatives' || choice == 'senators'))" ng-click="search()">search</button>
 </form>
 
-<br><br>
-<select ng-model="state_select" ng-options="state as state.name for state in state_options track by state.id"></select>
-<br><br>
-<br>
-search for {{choice}}
-<br>
-state is {{state_select}}
